@@ -1,4 +1,8 @@
-﻿package com.sandraproject.utils{
+﻿/**
+ * @author Michael Nick Avilan Mora
+ * @since 1.0
+ */
+package com.sandraproject.utils{
 	
 	import com.sandraproject.interfaces.IModel;
 	import flash.events.MouseEvent;
@@ -12,7 +16,7 @@
 			a_items=_items;
 			addListeners();
 		}
-		public function addListeners(){
+		public function addListeners():void{
 			for(var i:int=0;i<a_items.length;i++){
 				a_items[i].removeListeners();
 				a_items[i].setState(false);

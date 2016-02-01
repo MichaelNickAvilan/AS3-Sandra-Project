@@ -14,7 +14,7 @@
 			a_buttons=_buttons;
 			addListeners();
 		}
-		public function addListeners(){
+		public function addListeners():void{
 			for(var i:int=0;i<a_buttons.length;i++){
 				a_buttons[i].addEventListener(MouseEvent.CLICK, gotoSelectedSection);
 				if(i>0){

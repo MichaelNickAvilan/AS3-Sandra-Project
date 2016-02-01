@@ -1,4 +1,8 @@
-﻿package  com.sandraproject.advicer{
+﻿/**
+ * @author Michael Nick Avilan Mora
+ * @since 1.0
+*/
+package  com.sandraproject.advicer{
 	
 	import flash.events.EventDispatcher;
 	import com.sandraproject.interfaces.IController;
@@ -13,6 +17,7 @@
 		
 		public var INTRO_COMPLETE_EVENT:String="INTRO_COMPLETE_EVENT";
 		public var XML_COMPLETE_EVENT:String="XML_COMPLETE_EVENT";
+		
 		public var UPLOAD_PROGRESS_ADVICE:String="UPLOAD_PROGRESS_ADVICE";
 		public var UPLOAD_FAULT_ADVICE:String="UPLOAD_FAULT_ADVICE";
 		public var UPLOAD_COMPLETE_ADVICE:String="UPLOAD_COMPLETE_ADVICE";
@@ -37,16 +42,22 @@
 		public function SPAdvicer() {
 			// constructor code
 		}
+		/**
+		 * This returns an instance of the SPadvicer Class 
+		*/
 		public static function getInstance():SPAdvicer{
 			if(a_advicer == null){
 				a_advicer=new SPAdvicer();
 			}
 			return a_advicer;
 		}
-		public function dispatchAdvice(_advice:String){
-			this.dispatchEvent(new Event(_advice));
+		/**
+		 * This dispatch an event
+		 * @param {string} _advice - Event Name
+		*/
+		public function dispatchAdvice($advice:String):void{
+			this.dispatchEvent(new Event($advice));
 		}
-
 	}
 	
 }

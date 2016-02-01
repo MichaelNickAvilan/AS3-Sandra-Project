@@ -1,4 +1,9 @@
-﻿package  com.sandraproject.business{
+﻿/*
+* @author Michael Nick Avilan Mora
+* @since 1.0
+* This allows to load a CSV file
+*/
+package  com.sandraproject.business{
 	
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
@@ -13,18 +18,33 @@
 		private var a_loader:URLLoader=new URLLoader();
 		private var a_request:URLRequest=new URLRequest();
 		private var a_data:Array=new Array();
-
-		public function CSVReader(_path:String) {
-			a_request.url=_path;
+		
+		/*
+		 * contstructor method, delegates the CSV loading process
+		 * @param {string} _path - CSV location URL
+		*/
+		public function CSVReader($path:String) {
+			a_request.url=$path;
 			addListeners();
 			a_loader.load(a_request);
 		}
+		/*
+		 * Returns an array of arrays from the CSV converted data 
+		*/
 		public function getData():Array{
 			return a_data;
 		}
-		public function addListeners(){
+		/*
+		 * Attach events to its listeners 
+		*/
+		public function addListeners():void{
 			a_loader.addEventListener(Event.COMPLETE, loadDataComplete);
 		}
+		/*
+		 * Process the received data from the CSV file
+		 * Dispatch the CSV_LOADED_SUCCESS event
+		 * @param {event}
+		*/
 		private function loadDataComplete(e:Event):void{
 			a_data=e.currentTarget.data.split(/\r\n|\n|\r/);
 			for(var i:int=0;i<a_data.length;i++){

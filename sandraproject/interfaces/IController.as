@@ -1,12 +1,10 @@
-﻿package  com.sandraproject.interfaces{
-	/**
-	 * IController
-	 *
-	 * @author		Michael Avilán
-	 * @version		1.0.0
-	 * @private
-	 */
+﻿/**
+ * @author Michael Nick Avilan Mora
+ * @since 1.0
+ */
+package  com.sandraproject.interfaces{
+	
 	public interface IController {
-		function dispatchAdvice(_advice:String);
+		function dispatchAdvice(_advice:String):void;
 	}
 }

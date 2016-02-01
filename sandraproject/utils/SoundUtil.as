@@ -1,4 +1,8 @@
-﻿package  com.sandraproject.utils{
+﻿/**
+ * @author Michael Nick Avilan Mora
+ * @since 1.0
+ */
+package  com.sandraproject.utils{
 	import flash.media.Sound;
 	import flash.net.URLRequest;
 	import flash.media.SoundChannel;

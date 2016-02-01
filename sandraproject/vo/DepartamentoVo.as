@@ -1,4 +1,8 @@
-﻿package com.sandraproject.vo{
+﻿/**
+ * @author Michael Nick Avilan Mora
+ * @since 1.0
+ */
+package com.sandraproject.vo{
 	
 	public class DepartamentoVo {
 		

@@ -1,39 +1,38 @@
-﻿package  com.sandraproject.components{
-	
-	/**
-	 * InputTextComponent
-	 *
-	 * @author		Michael Avilán
-	 * @version		1.0.0
-	 * @private
-	 */
-	
+﻿/**
+ * @author Michael Nick Avilan Mora
+ * @since 1.0
+ */
+package  com.sandraproject.components{
+
 	import flash.display.MovieClip;
 	
 	public class InputTextComponent extends MovieClip {
 		
-		public function InputTextComponent() {
-			txt.text="";
+		private var a_ui_els:Array=new Array();
+		
+		public function InputTextComponent($label) {
+			a_ui_els.push($label);
+			a_ui_els[0].text="";
 		}
 		/**
 		 * Sets the text style as a Password
 		 */
 		public function setAsPassword():void{
-			txt.displayAsPassword=true;
+			a_ui_els[0].displayAsPassword=true;
 		}
 		/**
 		 * Sets the text content
 		 *
-		 * @param		_content			String
+		 * @param {string} $content
 		 */
-		public function setContent(_content:String):void{
-			txt.text=_content;
+		public function setContent($content:String):void{
+			a_ui_els[0].text=$content;
 		}
 		/**
 		 * Returns the content of the Input Text Field
 		 */
 		public function getContent():String{
-			return txt.text;
+			return a_ui_els[0].text;
 		}
 	}
 }

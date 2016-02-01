@@ -1,12 +1,9 @@
-﻿package com.sandraproject.server{
-	
-	/**
-	 * File Uploader
-	 * @description Class to manage the upload file proccess to a server using a server side script
-	 * @author		Michael Avilán
-	 * @version		1.0.0
-	 * @public
-	 */
+﻿/**
+ * @author Michael Nick Avilan Mora
+ * @since 1.0
+ */
+
+package com.sandraproject.server{
 	
 	import com.sandraproject.advicer.SPAdvicer;
 	import flash.net.URLRequest;
@@ -48,7 +45,7 @@
 			}
 			addListeners();
 		}
-		public function addListeners(){
+		public function addListeners():void{
 			a_file_reference.addEventListener(Event.SELECT, fileSelected);
 			a_file_reference.addEventListener(ProgressEvent.PROGRESS, uploadProgress);
 			a_file_reference.addEventListener(Event.COMPLETE, uploadComplete);

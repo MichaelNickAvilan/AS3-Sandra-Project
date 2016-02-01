@@ -1,19 +1,26 @@
-﻿package com.sandraproject.containers {
+﻿/**
+ * @author Michael Nick Avilan Mora
+ * @since 1.0
+ */
+package com.sandraproject.containers {
 	
+	import flash.display.MovieClip;
 	import flash.events.Event;
 	import fl.events.ScrollEvent;
-	import flash.display.MovieClip;
 	
 	public class ScrollableContainer {
 		
 		private var a_container:MovieClip;
 		private var a_mask:MovieClip;
 		private var a_sb:Object;
-
-		public function ScrollableContainer(_container:MovieClip,_mask:MovieClip,_sb:Object) {
-			a_container=_container;
-			a_sb=_sb;
-			a_mask=_mask;
+		
+		/**
+		 * Constructor method
+		 * */
+		public function ScrollableContainer($container:MovieClip,$mask:MovieClip,$sb:Object) {
+			a_container=$container;
+			a_sb=$sb;
+			a_mask=$mask;
 			a_container.mask=a_mask;
 			addListeners();
 			setScroll();
@@ -29,11 +36,10 @@
 			}
 		}
 		private function addListeners():void{
-			a_sb.addEventListener(ScrollEvent.SCROLL, scrollMC);
+			a_sb.addEventListener('SCROLL', scrollMC);
 		}
-		private function scrollMC(event:ScrollEvent):void{
+		private function scrollMC(event):void{
 			a_container.y = -a_container.height*(event.position/100)-150;
 		}
 	}
-	
 }
